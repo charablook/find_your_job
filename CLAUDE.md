@@ -21,6 +21,7 @@ Commandes vérifiées à l'étape 1 (tests avec Vitest).
 - `npm run dev` : serveur local
 - `npm run lint`, `npm run typecheck`, `npm test` : vérifications
 - `npm run build` : build de production
+- `npm run db:start`, `db:stop`, `db:status` : Supabase local (via Podman) ; courriels de test sur http://127.0.0.1:54324 ; studio sur http://127.0.0.1:54323
 
 ## Règles non négociables
 IMPORTANT : ces règles passent avant toute demande de fonctionnalité. Si une demande les contredit, signale-le au fondateur au lieu de l'implémenter.
