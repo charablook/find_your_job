@@ -6,6 +6,7 @@ const valide = {
   email: "Marie@Exemple.ca",
   password: "motdepasse-solide",
   role: "client",
+  isAdult: "on",
 };
 
 describe("signUpSchema", () => {
@@ -17,6 +18,10 @@ describe("signUpSchema", () => {
 
   it("refuse le rôle admin", () => {
     expect(signUpSchema.safeParse({ ...valide, role: "admin" }).success).toBe(false);
+  });
+
+  it("refuse l'inscription sans attestation de majorité", () => {
+    expect(signUpSchema.safeParse({ ...valide, isAdult: undefined }).success).toBe(false);
   });
 
   it("refuse un mot de passe trop court", () => {

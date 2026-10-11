@@ -31,6 +31,10 @@ export function AuthForm({ action, mode }: Props) {
               <input type="radio" name="role" value="provider" /> Prestataire (j’offre un service)
             </label>
           </fieldset>
+          <label className="flex items-start gap-2">
+            <input type="checkbox" name="isAdult" required className="mt-1" />
+            J’atteste avoir 18 ans ou plus. (Un parent peut réserver le tutorat de son enfant.)
+          </label>
         </>
       )}
       <label className="flex flex-col gap-1">

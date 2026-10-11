@@ -11,6 +11,7 @@ export const signUpSchema = z.object({
     .string()
     .min(10, "Le mot de passe doit contenir au moins 10 caractères.")
     .max(72, "Le mot de passe ne peut pas dépasser 72 caractères."),
+  isAdult: z.literal("on", { message: "Vous devez avoir 18 ans ou plus pour créer un compte." }),
   // Seuls ces deux rôles sont permis à l'inscription (jamais « admin »).
   role: z.enum(["client", "provider"], {
     message: "Choisissez un type de compte.",

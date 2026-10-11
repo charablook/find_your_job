@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 
@@ -24,6 +25,11 @@ export default async function ComptePage() {
       <h1 className="mb-4 text-2xl font-semibold">Bonjour {profile?.display_name} !</h1>
       <p>Type de compte : {roleLabel}</p>
       <p className="text-zinc-600">Courriel : {user.email}</p>
+      <p className="mt-6">
+        <Link href="/compte/profil" className="underline">
+          {profile?.role === "provider" ? "Mon profil prestataire" : "Devenir prestataire"}
+        </Link>
+      </p>
     </main>
   );
 }

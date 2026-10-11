@@ -12,6 +12,7 @@ export async function signUp(_prev: FormState, formData: FormData): Promise<Form
     email: formData.get("email"),
     password: formData.get("password"),
     role: formData.get("role"),
+    isAdult: formData.get("isAdult") ?? undefined,
   });
   if (!parsed.success) return { error: parsed.error.issues[0].message };
 
@@ -21,7 +22,7 @@ export async function signUp(_prev: FormState, formData: FormData): Promise<Form
     email,
     password,
     options: {
-      data: { display_name: displayName, role },
+      data: { display_name: displayName, role, adult: true },
       emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/confirmation`,
     },
   });
