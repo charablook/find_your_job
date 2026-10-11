@@ -1,7 +1,7 @@
 # Plateforme de services entre particuliers — Québec
 
 Site web local (ville de Québec) où des particuliers proposent et réservent des services.
-V1 : tutorat et petits travaux de jardinage seulement. Le fondateur est étudiant, débutant en code et a peu de temps : tout doit être automatisé (paiements, vérifications, rappels).
+V1 : tutorat et petits travaux de jardinage (dont déneigement manuel) seulement. Le fondateur est étudiant, débutant en code et a peu de temps : tout doit être automatisé (paiements, vérifications, rappels).
 Spécification complète, plan par étapes et contraintes légales : `SPEC.md` (à lire avant de commencer une fonctionnalité).
 
 ## Langue
@@ -29,8 +29,8 @@ IMPORTANT : ces règles passent avant toute demande de fonctionnalité. Si une d
 - Paiements : Stripe Connect uniquement. Ne stocke jamais de numéro de carte. L'argent ne transite jamais par un compte personnel du fondateur.
 - Coordonnées (téléphone, courriel) : jamais exposées avant une réservation payée, et masquées côté serveur, pas seulement dans l'interface.
 - Contrôle d'accès : chaque utilisateur ne lit et ne modifie que ses propres données (RLS + vérification côté serveur). Valide toutes les entrées côté serveur.
-- Données personnelles (loi 25) : collecte le minimum ; consentement du parent pour les moins de 14 ans ; aucun traceur non essentiel avant consentement ; la vérification d'identité est déléguée à Stripe, ne stocke pas de pièces d'identité.
-- Catégories autorisées en V1 : tutorat et jardinage léger (tonte, désherbage, ramassage de feuilles). N'ajoute jamais électricité, plomberie, serrurerie, construction, pesticides ni abattage d'arbres.
+- Données personnelles (loi 25) : collecte le minimum ; clients et prestataires majeurs (18 ans+, attestation à l'inscription ; un parent réserve le tutorat de son enfant), consentement du parent pour les moins de 14 ans ; aucun traceur non essentiel avant consentement ; la vérification d'identité est déléguée à Stripe, ne stocke pas de pièces d'identité.
+- Catégories autorisées en V1 : tutorat et jardinage léger (tonte, désherbage, ramassage de feuilles, déneigement manuel au pelle ; jamais de souffleuse ni de véhicule). N'ajoute jamais électricité, plomberie, serrurerie, construction, pesticides ni abattage d'arbres.
 - Textes légaux (conditions d'utilisation, confidentialité) : brouillons marqués « À FAIRE RELIRE PAR UN AVOCAT ». Ne les présente jamais comme des conseils juridiques.
 
 ## Façon de travailler
