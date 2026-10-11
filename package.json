@@ -11,7 +11,8 @@
     "test": "vitest run",
     "db:start": "DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock supabase start",
     "db:stop": "DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock supabase stop",
-    "db:status": "DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock supabase status"
+    "db:status": "DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock supabase status",
+    "db:migrate": "DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock supabase migration up"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
@@ -19,6 +20,8 @@
     "next": "16.4.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "sharp": "^0.35.5",
     "zod": "^4.6.5"
   },
   "devDependencies": {
